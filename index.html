@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Book Store</title>
+</head>
+<body>
+    <div id="header">
+        <div class="container-fluid mt-2">
+            <div class="row mb-2 ">
+                <div class="offset-1 col-2 mt-2">
+                    <img id="logobook" src="./images/logobook.jpg" alt="logobook">
+                </div>
+                <div class="col-5">
+                    <form class="d-md-flex" hidden>
+                        <div id="header-searchbox" class="input-group mt-3 w-100 border border-info rounded-3" >
+                            <input type="text" class="form-control border-0" placeholder="Tìm kiếm tựa sách, tác giả,..." aria-label="Input group example" aria-describedby="btnGroupAddon">
+                            <div class="input-group-text border-0 bg-white" id="btnGroupAddon">
+                                <i class="fas fa-solid fa-magnifying-glass"></i>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-4 mt-3">
+                    <div class="row float-end">
+                        <div class="col-5">
+                            <a class="nav-link ms-3" href="" style="width: 150px;">
+                                <i class="fas fa-shopping-cart" style="font-size: 30px;"></i> 
+                                <p class="d-md-inline" hidden>Giỏ hàng</p>
+                            </a>
+                        </div>
+                        <div class="col-4 dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-regular fa-user" style="font-size: 30px;"></i> 
+                                <p class="d-md-inline" hidden>Tài khoản</p>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">Đăng nhập</a>
+                                <a class="dropdown-item" href="#">Đăng ký</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- Navbar -->
+            <div class="row">
+                <nav class="navbar navbar-expand-lg navbar-light bg-success bg-opacity-75">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse ms-3" id="navbarContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Giới thiệu</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">Liên Hệ</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Danh Mục Sách
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <form class="d-md-none" show>
+                                <div id="header-searchbox1" class="input-group mt-3 mb-3 w-100 border border-info rounded-3" >
+                                    <input type="text" class="form-control border-0" placeholder="Tìm kiếm tựa sách, tác giả,..." aria-label="Input group example" aria-describedby="btnGroupAddon">
+                                    <div class="input-group-text border-0 bg-white" id="btnGroupAddon">
+                                        <i class="fas fa-solid fa-magnifying-glass"></i>
+                                    </div>
+                                </div>
+                            </form>
+                            <div id="phonenumber" class="d-md-flex" hidden>
+                                <i class="fa-solid fa-phone mx-2 my-1" style="font-size: 20px;"></i>
+                                Hostline: 
+                                <a class="nav-link ms-2" href="">0948330411</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>  
+        </div>
+    </div>
+    <div id="main">
+        <div class="container">
+            <!-- Slider -->
+            <div id="main-slider" class="py-3 row">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="./images/slider/slider1.png" class="d-block w-100" alt="slider1">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./images/slider/slider2.png" class="d-block w-100" alt="slider2">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="./images/slider/slider3.png" class="d-block w-100" alt="slider3">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Sản phẩm -->
+            <div class="container">
+                <div id="sanpham" class="row border border-dark-subtle">
+                    <h3 class="bg-success bg-opacity-75 text-white py-2">SÁCH TIẾNG ANH CHO TRẺ EM</h3>
+                    <div class="product-list row pb-4">
+                        <div class="col-md-3 col-6">
+                            <div class="card my-2 text-center">
+                                <img class="img-fluid" src="./images/book-img/book1.png" alt="">
+                                <div class="card-body">
+                                    <h5>Book's Name</h5>
+                                    <p class="card-text">100.000vnd</p>
+                                    <a href="" class="btn btn-success">
+                                        <i class="fas fa-solid fa-cart-plus"></i>
+                                        Mua ngay
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="card my-2 text-center">
+                                <img class="img-fluid" src="./images/book-img/book1.png" alt="">
+                                <div class="card-body">
+                                    <h5>Book's Name</h5>
+                                    <p class="card-text">100.000vnd</p>
+                                    <a href="" class="btn btn-success">
+                                        <i class="fas fa-solid fa-cart-plus"></i>
+                                        Mua ngay
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="card my-2 text-center">
+                                <img class="img-fluid" src="./images/book-img/book1.png" alt="">
+                                <div class="card-body">
+                                    <h5>Book's Name</h5>
+                                    <p class="card-text">100.000vnd</p>
+                                    <a href="" class="btn btn-success">
+                                        <i class="fas fa-solid fa-cart-plus"></i>
+                                        Mua ngay
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <div class="card my-2 text-center">
+                                <img class="img-fluid" src="./images/book-img/book1.png" alt="">
+                                <div class="card-body">
+                                    <h5>Book's Name</h5>
+                                    <p class="card-text">100.000vnd</p>
+                                    <a href="" class="btn btn-success">
+                                        <i class="fas fa-solid fa-cart-plus"></i>
+                                        Mua ngay
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="footer" class="bg-success bg-opacity-75 pt-4">
+        <div class="container-fluid row mx-3">
+            <div class="col-md my-4 col-12">
+                <h5 class="py-2 text-white">THÔNG TIN LIÊN HỆ</h5>
+                <hr class="text-white ">
+                <ul class="footer-ul">
+                    <li>
+                        <p style="font-weight: 600;">BOOK STORE</p>
+                    </li>
+                    <li>
+                        <p>Địa chỉ: Hưng lợi, Ninh Kiều, Cần Thơ</p>
+                    </li>
+                    <li>
+                        <p>Hotline: 0948 330 411</p>
+                    </li>
+                    <li>
+                        <p>Email:thinhb2014790@student.ctu.edu.vn</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md my-4 col-12">
+                <h5 class="py-2 text-white">CHÍNH SÁCH BÁN HÀNG</h5>
+                <hr class="text-white ">
+                <div class="row">
+                    <div class="col">
+                        <ul class="footer-ul">
+                            <li>
+                                <p>Hướng dẫn mua hàng</p>
+                            </li>
+                            <li>
+                                <p>Hướng dẫn thanh toán</p>
+                            </li>
+                            <li>
+                                <p>Chính sách vận chuyển</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul class="footer-ul">
+                            <li>
+                                <p>Điều khoản dịch vụ</p>
+                            </li>
+                            <li>
+                                <p>Chính sách bảo mật</p>
+                            </li>
+                            <li>
+                                <p>Chính sách đổi trả</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md my-4 col-12">
+                <h5 class="py-2 text-white">BẢN ĐỒ</h5>
+                <hr class="text-white ">
+                <div id="map">
+                    <iframe class="col-12 col-md-9" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d245.55804535365044!2d105.76820174754104!3d10.02274050793034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1675434954291!5m2!1svi!2s"
+                     width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</html>

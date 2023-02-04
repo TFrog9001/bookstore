@@ -1,0 +1,39 @@
+#logobook {
+    width: 160px;
+}
+
+#btnGroupAddon :hover {
+    cursor: pointer;
+}
+
+#cart-icon {
+    width: 45px;
+}
+
+#navbarContent >ul >li >a , #phonenumber{
+    color: white;
+}
+
+div#main{
+    background-image: url(../images/bgimg.jpg);
+    background-size: contain;
+}
+
+.footer-ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.footer-ul >li >p{
+    color: white;
+    font-size: 16px;
+}
+
+/* soluong */
+.buy-amount button{
+    width: 35px;
+    height: 35px;
+    outline: none;
+    background: none;
+    border: 1px solid #ececec;
+}
