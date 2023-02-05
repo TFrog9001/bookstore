@@ -52,7 +52,7 @@
             </div>
             <!-- Navbar -->
             <div class="row">
-                <nav class="navbar navbar-expand-lg navbar-light bg-success bg-opacity-75">
+                <nav class="navbar navbar-expand-lg navbar-light color-53a57f">
                     <div class="container-fluid">
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -128,30 +128,66 @@
                     </div>
                 </div>
                 <div class="col-md-7 col-12">
-                    <div class="tensp">
+                    <div class="tensp row">
                         <h2 class="text-uppercase">Book's Name</h2>
                     </div>
-                    <div class="giasp">
+                    <div class="giasp row">
                         <h2 class="text-danger text-uppercase">100.000 VND</h2>
                     </div>
-                    <div>
-                        <form action="" >
+                    <div class="mt-4 row">
+                        <div>
                             <div class="d-flex">
-                                <label class="text-uppercase d-inline" for="">Số lượng:</label>
+                                <label class="text-uppercase d-inline mt-2" for="">Số lượng:</label>
                                 <div class="buy-amount d-flex ms-2">
-                                    <button class="minus">-</button>         
+                                    <button id="btn-minus">-</button>         
                                     <input class="text-center border border-light-subtle" type="text" name="amount" id="amount" size="2" value="1">
-                                    <button class="plus">+</button>         
+                                    <button id="btn-plus">+</button>         
                                 </div>
                             </div>
-                        </form>
+                            <div class="d-flex mt-5">
+                                <button class="btn btn-lg btn-danger">Mua hàng</button>
+                                <button class="btn btn-lg btn-primary text-white ms-2">Thêm vào giỏ</button>
+                            </div>
+                        </div>
                     </div>
+                </div>
+            </div>
+            <!-- Mota -->
+            <nav>
+                <div class="nav nav-tabs bg-info-subtle" id="nav-tab" role="tablist">
+                  <button class="nav-link text-black active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Mô tả</button>
+                  <button class="nav-link text-black" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Đánh giá (0)</button>
+                  <button class="nav-link text-black" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">TAGS</button>
+                </div>
+            </nav>
+            <div class="tab-content mb-4" id="nav-tabContent">
+                <div class="tab-pane fade  show active border border-light-subtle p-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <p class="">
+                        MÔ TẢ
+                    ❌❌❌  Dr.Seus (33 cuốn)
+                    ???? ????Đâu là những cuốn sách mà đệ nhất phu nhân Mỹ Melania Trump gửi tặng cho trẻ em nước Mỹ? Xin trả lời, đó là sách của nhà văn Dr Seuss
+
+                    ???????? Để trả lời cho câu hỏi làm thế nào để khơi gợi được niềm đam mê đọc sách của những đứa trẻ ngay từ khi còn bé? Chúng tôi mang tới cho trẻ em Việt Nam những cuốn sách của nhà văn Dr Seuss. Để nói về Dr Seuss thì cũng chỉ cần tóm gọn một câu: “ Nhà văn làm thay đổi giáo dục nước Mỹ”.
+
+                    ???????? Những vấn đề ngây thơ, tò mò, thích sự mới lạ, sẵn sàng chịu thử thách của con trẻ, được Dr Seuss đề cập cũng với một cách ngây thơ, vui nhộn và đáng yêu không kém trong sách của ông.
+
+                    ????❄️ Vì sao mà gã Grinch lại ghét Giáng Sinh? Vì lão từng bị tổn thương bởi sự cô đơn ghẻ lạnh
+
+                    ❤️❄️ Làm thế nào để lão Grinch yêu Giáng Sinh ? Không phải những món quà, những cửa hàng, cửa hiệu mà chính là sự quan tâm, biết chia sẻ và gần gũi của các cô bé, cậu nhỏ trong câu chuyện.
+                
+                    </p>    
+                </div>
+                <div class="tab-pane fade border border-light-subtle" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+                </div>
+                <div class="tab-pane fade border border-light-subtle" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+
                 </div>
             </div>
         </div>
     </div>
     <!-- Footer -->
-    <div id="footer" class="bg-success bg-opacity-75 pt-4">
+    <div id="footer" class="color-53a57f pt-4">
         <div class="container-fluid row mx-3">
             <div class="col-md my-4 col-12">
                 <h5 class="py-2 text-white">THÔNG TIN LIÊN HỆ</h5>
@@ -215,4 +251,5 @@
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./js/scrip.js"></script>
 </html>
