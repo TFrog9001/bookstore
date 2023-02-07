@@ -101,41 +101,59 @@
     </div>
     <div id="main-cart">
         <div class="container">
-            <div class="row">
-                <table class="col-12 border border-light-subtle">
-                    <thead>
-                        <th>Mã sách</th>
-                        <th>Tên sách</th>
-                        <th>Hình ảnh</th>
-                        <th>Giá bán</th>
-                        <th>Số lượng</th>
-                        <th>Tạm tính</th>
-                        <th>Xoá</th>
-                    </thead>
-                    <tr>
-                        <td>
-                            SP1
-                        </td>
-                        <td>
-                            Book's Name
-                        </td>
-                        <td>
-                            <img src="./images/book-img/book1.png" alt="">
-                        </td>
-                        <td>
-                            100.00VND
-                        </td>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            100.00VND
-                        </td>
-                        <td>
-                            X
-                        </td>
-                    </tr>
-                </table>
+            <div class="col-12">
+                <h2 class="text-uppercase my-4">Giỏ hàng</h2>
+                <form action="">
+                    <div class="cart">
+                        <div class="cart-thead row py-3 d-sm-flex" hidden>
+                            <div style="width: 19%;" class="text-center">Sản phẩm</div>
+                            <div style="width: 28%" class="text-center">Tên sách</div>
+                            <div style="width: 17%" class="text-center">Đơn giá</div>
+                            <div style="width: 18%" class="text-center">Số lượng</div>
+                            <div style="width: 5%" class="text-center">Xóa</div>
+                            <div style="width: 13%;" class="text-center">Thành tiền</div>
+                        </div>
+                        <div class="cart-tbody row">
+                            <div style="width: 19%" class="image">
+                                <img width="120" height="auto" alt="" src="./images/book-img/book1.png">
+                            </div>
+                            <div style="width: 28%;">
+                                <span class="book-name">Book's name</span>
+                            </div>
+                            <div style="width: 17%" class="d-sm-flex" hidden>
+                                <span class="book-price">100.000VND</span>
+                            </div>
+                            <div style="width: 17%" class="d-sm-flex justify-content-end">
+                                <div class="d-flex justify-content-center">
+                                    <div class="buy-amount d-flex ms-2">
+                                        <button id="btn-minus">-</button>         
+                                        <input class="text-center border border-light-subtle" type="text" name="amount" id="amount" size="2" value="1" style="height: 35px;">
+                                        <button id="btn-plus">+</button>         
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="width: 5%" class="text-center">
+                                <i class="fa fa-remove"></i>
+                            </div>
+                            <div style="width: 13%;" class="d-sm-flex" hidden>
+                                100.00VND
+                            </div>
+                        </div>
+                        <div class="cart-tfooter row my-4">
+                            <div class="text-end mb-4">
+                                <div class="d-flex justify-content-end mb-4">
+                                    <div class="h4 me-4" style="margin-bottom: 0;margin-top: 7px;">
+                                        Tổng tiền:
+                                    </div>
+                                    <div id="total-price" class="text-danger">
+                                        100.000VND
+                                    </div>
+                                </div>
+                                <button class="btn btn-danger btn-lg" type="submit">Thanh Toán</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -204,4 +222,5 @@
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./js/scrip.js"></script>
 </html>

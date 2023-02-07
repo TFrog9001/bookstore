@@ -42,3 +42,31 @@ div#main{
 .color-53a57f{
     background-color: #53a57f;
 }
+
+/* table-cart */
+.cart-thead{
+    border-bottom: 1px solid #ebebeb;
+    border-top: 1px solid #ebebeb;
+}
+
+.cart-thead > div{
+    font-weight: 550;
+    font-size: large;
+}
+
+.cart-tbody ,.cart-tfooter{
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: 10px;
+}
+
+.cart-tbody > div{
+    height: 155px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#total-price{
+    font-size: 28px;
+    font-weight: 600;
+}
