@@ -5,10 +5,14 @@
     else {
         $tmp ='';
     }
-    if($tmp=='trangchu'){
-        include('pages/main/index.php');
+
+    switch ($tmp){
+        case '':
+            include('pages/main/index.php');
+            break;
+        case 'giohang':
+            include('pages/main/giohang.php');
+            break;
     }
-    elseif($tmp=='giohang'){
-        include('pages/main/giohang.php');
-    }          
+        
 ?>

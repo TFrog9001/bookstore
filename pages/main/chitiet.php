@@ -81,21 +81,21 @@
                         <h2>Đánh giá</h2>
                         <p>Hãy đưa ra nhận xét của bạn:</p>
                         <div class="form-group row mb-2">
-                            <label class="col-form-label text-right font-weight-bold">Tên (*)</label>
+                            <label class="col-form-label text-right font-weight-bold">Tên (<strong class="text-danger">*</strong>)</label>
                             <div class="my-2">
                                 <input class="form-control" type="text" placeholder="Tên">
                             </div>
                         </div>
 
                         <div class="form-group row mb-2">
-                            <label class="col-form-label text-right font-weight-bold">Email (*)</label>
+                            <label class="col-form-label text-right font-weight-bold">Email (<strong class="text-danger">*</strong>)</label>
                             <div class="my-2">
                                 <input class="form-control" type="text" placeholder="Nhập vào email">
                             </div>
                         </div>
 
                         <div class="form-group row mb-2">
-                            <label class="col-form-label text-right font-weight-bold">Nhận xét của bạn (*)</label>
+                            <label class="col-form-label text-right font-weight-bold">Nhận xét của bạn (<strong class="text-danger">*</strong>)</label>
                             <div class="my-2">
                                 <textarea class="form-control" name="comnent" id="comment"  rows="7"></textarea>
                             </div>
