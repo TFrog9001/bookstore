@@ -1,20 +1,21 @@
 function quantitychange(){
-    let amountElement = document.getElementById('amount');
-    let amount = amountElement.value;
 
-    document.getElementById('btn-plus').addEventListener("click", function(){
+    let amountElement = $('#amount');
+    let amount = amountElement.value();
+
+    $('#btn-plus').on("click", function(){
         amount++; 
         amountElement.value=amount;
     })
 
-    document.getElementById('btn-minus').addEventListener("click", function(){
+    $('#btn-minus').on("click", function(){
         if(amount >1){
             amount--;
-            amountElement.value=amount;
+            amountElement.value()=amount;
         }
     })
 
-    amountElement.addEventListener("input", function(){
+    amountElement.on("input", function(){
         amount = amountElement.value;
     })
 }

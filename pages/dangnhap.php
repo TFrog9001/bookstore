@@ -6,9 +6,8 @@
 		$sql=mysqli_query($conn,"select * from user where user='$username' and pass='$password' limit 1");
 		$count=mysqli_num_rows($sql);
 		if($count>0){
-			$tendangnhap=$_SESSION['dangnhap']=$username;
-			echo '<p style="text-align:center;width:auto;padding:30px;background:red;color:#fff;font-size:20px;">Bạn đã đăng nhập thành công.</p>';
-			echo '<a href="index.php?quanly=dathang" style="font-size:20px;">Quay lại để thanh toán</a>';
+			$_SESSION['username'] = $username;  
+            header('location: index.php');          
 		}else{
 			echo '<p style="text-align:center;width:auto;padding:30px;background:red;color:#fff;font-size:20px;">Email và Tài khoản bị sai</p>';
 		}

@@ -13,6 +13,17 @@
         case 'giohang':
             include('pages/main/giohang.php');
             break;
+        case 'chitiet':
+            include('pages/main/chitiet.php');
+            break;
+        case 'thoat':
+            unset($_SESSION['username']);
+            echo '
+            <script>
+                window.location.href="./index.php"
+            </script>
+            ';
+            break;
     }
         
 ?>
