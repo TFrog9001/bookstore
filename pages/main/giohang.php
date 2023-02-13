@@ -2,7 +2,7 @@
         <div class="container">
             <div class="col-12">
                 <h2 class="text-uppercase my-4">Giỏ hàng</h2>
-                <form action="">
+                <div>
                     <div class="cart">
                         <div class="cart-thead row py-3 d-sm-flex" hidden>
                             <div style="width: 19%;" class="text-center">Sản phẩm</div>
@@ -38,21 +38,23 @@
                                 100.00VND
                             </div>
                         </div>
-                        <div class="cart-tfooter row my-4">
-                            <div class="text-end mb-4">
-                                <div class="d-flex justify-content-end mb-4">
-                                    <div class="h4 me-4" style="margin-bottom: 0;margin-top: 7px;">
-                                        Tổng tiền:
+                        <form>
+                            <div class="cart-tfooter row my-4">
+                                <div class="text-end mb-4">
+                                    <div class="d-flex justify-content-end mb-4">
+                                        <div class="h4 me-4" style="margin-bottom: 0;margin-top: 7px;">
+                                            Tổng tiền:
+                                        </div>
+                                        <div id="total-price" class="text-danger">
+                                            100.000VND
+                                        </div>
                                     </div>
-                                    <div id="total-price" class="text-danger">
-                                        100.000VND
-                                    </div>
+                                    <button class="btn btn-danger btn-lg" type="submit">Thanh Toán</button>
                                 </div>
-                                <button class="btn btn-danger btn-lg" type="submit">Thanh Toán</button>
                             </div>
-                        </div>
+                        </form>
                     </div>
-                </form>
+                </div>
             </div>
             <!-- Modal-xoa -->
             <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">

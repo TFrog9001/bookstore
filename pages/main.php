@@ -5,10 +5,25 @@
     else {
         $tmp ='';
     }
-    if($tmp=='trangchu'){
-        include('pages/main/index.php');
+
+    switch ($tmp){
+        case '':
+            include('pages/main/index.php');
+            break;
+        case 'giohang':
+            include('pages/main/giohang.php');
+            break;
+        case 'chitiet':
+            include('pages/main/chitiet.php');
+            break;
+        case 'thoat':
+            unset($_SESSION['username']);
+            echo '
+            <script>
+                window.location.href="./index.php"
+            </script>
+            ';
+            break;
     }
-    elseif($tmp=='giohang'){
-        include('pages/main/giohang.php');
-    }          
+        
 ?>
