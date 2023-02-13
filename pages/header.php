@@ -1,10 +1,4 @@
-<?php 
-    include("./pages/dangnhap.php");
-    include("./pages/dangky.php");
-?>
-
-
-<div id="header">
+    <div id="header">
         <div class="container-fluid mt-2">
             <div class="row mb-2">
                 <div class="offset-1 col-2 mt-2">
