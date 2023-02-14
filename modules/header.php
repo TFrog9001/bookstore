@@ -59,8 +59,8 @@
                             }
                         ?>
                         <?php 
-                            include("./pages/dangnhap.php");
-                            include("./pages/dangky.php");
+                            include("./modules/dangnhap.php");
+                            include("./modules/dangky.php");
                         ?>    
                     </div>
                 </div>

@@ -14,12 +14,13 @@
     <?php
         session_start();
         include("./admincp/config/config.php");
-        include("./pages/header.php");
-        include("./pages/nav.php");
-        include("./pages/main.php");
-        include("./pages/footer.php");
+        include("./modules/header.php");
+        include("./modules/nav.php");
+        include("./modules/main.php");
+        include("./modules/footer.php");
     ?>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="./js/scrip.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/scrip.js"></script>
 </html>

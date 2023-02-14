@@ -38,9 +38,9 @@
                             <div class="d-flex">
                                 <label class="text-uppercase d-inline mt-2" for="">Số lượng:</label>
                                 <div class="buy-amount d-flex ms-2">
-                                    <button id="btn-minus">-</button>         
+                                    <button class="btn-minus">-</button>         
                                     <input class="text-center border border-light-subtle" type="text" name="amount" id="amount" size="2" value="1">
-                                    <button id="btn-plus">+</button>         
+                                    <button class="btn-plus">+</button>         
                                 </div>
                             </div>
                             <div class="d-flex mt-5">

@@ -25,9 +25,9 @@
                             <div style="width: 17%" class="d-sm-flex">
                                 <div class="d-flex justify-content-center">
                                     <div class="buy-amount d-flex ms-2">
-                                        <button id="btn-minus">-</button>         
-                                        <input class="text-center border border-light-subtle" type="text" name="amount" id="amount" size="2" value="1" style="height: 35px;">
-                                        <button id="btn-plus">+</button>         
+                                        <button class="btn-minus">-</button>         
+                                        <input class="text-center border border-light-subtle" type="text" name="amount" id="amount" size="2" value="1" pattern="/^\d*$/.test(value)" style="height: 35px;">
+                                        <button class="btn-plus">+</button>         
                                     </div>
                                 </div>
                             </div>

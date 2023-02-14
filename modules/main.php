@@ -8,13 +8,13 @@
 
     switch ($tmp){
         case '':
-            include('pages/main/index.php');
+            include('modules/main/index.php');
             break;
         case 'giohang':
-            include('pages/main/giohang.php');
+            include('modules/main/giohang.php');
             break;
         case 'chitiet':
-            include('pages/main/chitiet.php');
+            include('modules/main/chitiet.php');
             break;
         case 'thoat':
             unset($_SESSION['username']);

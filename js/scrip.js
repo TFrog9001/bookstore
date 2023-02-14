@@ -2,12 +2,12 @@ function quantitychange(){
     let amountElement = document.getElementById('amount');
     let amount = amountElement.value;
 
-    document.getElementById('btn-plus').addEventListener("click", function(){
+    $('.btn-plus').on("click", function(){
         amount++; 
         amountElement.value=amount;
     })
 
-    document.getElementById('btn-minus').addEventListener("click", function(){
+    $('.btn-minus').on("click", function(){
         if(amount >1){
             amount--;
             amountElement.value=amount;
@@ -18,4 +18,8 @@ function quantitychange(){
         amount = amountElement.value;
     })
 }
+
+
+
+
 quantitychange();
