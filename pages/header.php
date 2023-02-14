@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 11cb542a86670aa17add896c3b40871160e6bb53
     <div id="header">
         <div class="container-fluid mt-2">
             <div class="row mb-2">
@@ -49,7 +43,7 @@
                             }
                             else {
                                 echo '
-                                <div class="col-4 dropdown">
+                                <div class="col-6 dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="fas fa-regular fa-user" style="font-size: 30px;"></i> 
                                         <p class="d-md-inline" hidden>Tài khoản</p>
@@ -64,13 +58,12 @@
                                 ';
                             }
                         ?>
-                        
                         <?php 
                             include("./pages/dangnhap.php");
                             include("./pages/dangky.php");
-                        ?>
-        
+                        ?>    
                     </div>
                 </div>
-            </div>
+            </div>  
+        </div>
     </div>

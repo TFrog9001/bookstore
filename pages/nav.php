@@ -1,6 +1,6 @@
 <!-- Navbar -->
-            <div class="row sticky-top">
-                <nav class="navbar navbar-expand-lg navbar-light color-53a57f">
+            
+                <nav class="navbar navbar-expand-lg navbar-light color-53a57f sticky-top z-2">
                     <div class="container-fluid">
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -8,7 +8,7 @@
                         <div class="collapse navbar-collapse ms-3" id="navbarContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="./index.php?">Home</a>
+                                    <a class="nav-link active" aria-current="page" href="./index.php#">Home</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="./index.php?quanly=gioithieu">Giới thiệu</a>
@@ -45,5 +45,4 @@
                         </div>
                     </div>
                 </nav>
-            </div>  
-        </div>
+           
