@@ -1,5 +1,4 @@
-<!-- Navbar -->
-            
+                 <!-- Navbar -->        
                 <nav class="navbar navbar-expand-lg navbar-light color-53a57f sticky-top z-2">
                     <div class="container-fluid">
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,11 +20,14 @@
                                         Danh Mục Sách
                                     </a>
                                     <ul class="dropdown-menu list-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="./index.php?quanly=danhmuc&id=1">Sách Mới Nhất</a></li>
-                                        <li><a class="dropdown-item" href="./index.php?quanly=danhmuc&id=2">Sách Tiếng Anh</a></li>
-                                        <li><a class="dropdown-item" href="./index.php?quanly=danhmuc&id=3">Truyện Tiếng Anh</a></li>
-                                        <li><a class="dropdown-item" href="./index.php?quanly=danhmuc&id=4">Sách Luyện Thi</a></li>
-                                        <li><a class="dropdown-item" href="./index.php?quanly=danhmuc&id=5">Sách Giáo Dục</a></li>
+                                    <?php
+                                        $sql_dm = mysqli_query($conn,"select * from danhmucsach where 1");
+                                        if (mysqli_num_rows($sql_dm) > 0) {
+                                            while($row = mysqli_fetch_assoc($sql_dm)) {
+                                                echo '<li><a class="dropdown-item" href="./index.php?quanly=danhmuc&id='.$row['id_dm'].'">'.$row['ten_dm'].'</a></li>';
+                                            }
+                                        } 
+                                    ?>  
                                     </ul>
                                 </li>
                             </ul>

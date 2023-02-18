@@ -5,9 +5,16 @@
 		$password=$_POST['password'];
 		$sql=mysqli_query($conn,"select * from user where user='$username' and pass='$password' limit 1");
 		$count=mysqli_num_rows($sql);
+        $row = mysqli_fetch_assoc($sql);
 		if($count>0){
+            $_SESSION['id_user'] = $row['id'];
 			$_SESSION['username'] = $username;  
-            header('location: index.php');          
+            if($row['role'] == 1){
+                header('location: ./admincp/admin.php');
+            }
+            else {
+                header('location: index.php');          
+            }
 		}else{
 			echo '<p style="text-align:center;width:auto;padding:30px;background:red;color:#fff;font-size:20px;">Email và Tài khoản bị sai</p>';
 		}
@@ -47,8 +54,8 @@
                     </div>
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <button class="btn btn-secondary btn-lg" data-bs-dismiss="modal">Hủy</button>
-                    <button class="btn btn-primary btn-lg" name="dangnhap" type="submit">Đăng nhập</button>
+                    <input type="reset" class="btn btn-secondary btn-lg" data-bs-dismiss="modal" value="Hủy">
+                    <input type="submit" class="btn btn-primary btn-lg" name="dangnhap" value="Đăng nhập">
                 </div>
             </form>
         </div>

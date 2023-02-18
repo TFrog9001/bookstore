@@ -17,6 +17,7 @@
             include('modules/main/chitiet.php');
             break;
         case 'thoat':
+            unset($_SESSION['id_user']);
             unset($_SESSION['username']);
             echo '
             <script>

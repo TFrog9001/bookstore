@@ -1,13 +1,14 @@
 <?php
-if (isset($_POST['gui'])) {
+if (isset($_POST['dangky'])) {
     $tenkh = $_POST['name'];
     $username = $_POST['username'];
     $email = $_POST['email'];
     $pass = $_POST['password'];
-    $sql_dangky = mysqli_query($conn, "insert into user (name, email, user, pass) value('$tenkh','$email','$username','$pass')");
 
-    if ($sql_dangky) {
-
+    $sql=mysqli_query($conn,"select * from user where user='$username' and email='$email' limit 1");
+    $count=mysqli_num_rows($sql);
+    if($count < 1){
+        $sql_dangky = mysqli_query($conn, "insert into user (name, email, user, pass) value('$tenkh','$email','$username','$pass')");
     }
 }
 ?>
@@ -71,8 +72,8 @@ if (isset($_POST['gui'])) {
 
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <button class="btn btn-secondary btn-lg" data-bs-dismiss="modal">Hủy</button>
-                    <button class="btn btn-primary btn-lg" name="gui" type="submit">Đăng ký</button>
+                    <input type="reset" class="btn btn-secondary btn-lg" data-bs-dismiss="modal" value="Hủy">
+                    <input type="submit" class="btn btn-primary btn-lg" name="dangky" value="Đăng ký">
                 </div>
             </form>
         </div>
