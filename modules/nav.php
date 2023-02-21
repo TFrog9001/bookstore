@@ -21,7 +21,7 @@
                                     </a>
                                     <ul class="dropdown-menu list-menu" aria-labelledby="navbarDropdown">
                                     <?php
-                                        $sql_dm = mysqli_query($conn,"select * from danhmucsach where 1");
+                                        $sql_dm = mysqli_query($conn,"select * from danhmucsach order by ten_dm");
                                         if (mysqli_num_rows($sql_dm) > 0) {
                                             while($row = mysqli_fetch_assoc($sql_dm)) {
                                                 echo '<li><a class="dropdown-item" href="./index.php?quanly=danhmuc&id='.$row['id_dm'].'">'.$row['ten_dm'].'</a></li>';

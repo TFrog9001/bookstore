@@ -9,12 +9,9 @@
 		if($count>0){
             $_SESSION['id_user'] = $row['id'];
 			$_SESSION['username'] = $username;  
-            if($row['role'] == 1){
-                header('location: ./admincp/admin.php');
-            }
-            else {
-                header('location: index.php');          
-            }
+           
+            header('location: index.php');          
+
 		}else{
 			echo '<p style="text-align:center;width:auto;padding:30px;background:red;color:#fff;font-size:20px;">Email và Tài khoản bị sai</p>';
 		}

@@ -1,0 +1,9 @@
+/* Color */
+.color-53a57f{
+    background-color: #53a57f;
+}
+/* search box */
+select#selector1 {
+    border: 1px solid #d9dde2;
+    background-color: white;
+}
