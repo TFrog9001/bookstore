@@ -20,18 +20,37 @@
                     <select class="btn dropdown-toggle" id="selector1" name="selector1">
                         <option class="input-group-text" value="*">Tất cả</option>
                         <?php
-                            $sql_dm = mysqli_query($conn, "select * from danhmucsach order by ten_dm");
-                            if (mysqli_num_rows($sql_dm) > 0) {
-                                while ($row = mysqli_fetch_assoc($sql_dm)) {
-                                    echo '<option class="input-group-text" value="'.$row['id_dm'].'">'.$row['ten_dm'].'</option>';
-                                }
+                        $sql_dm = mysqli_query($conn, "select * from danhmucsach order by ten_dm");
+                        if (mysqli_num_rows($sql_dm) > 0) {
+                            while ($row = mysqli_fetch_assoc($sql_dm)) {
+                                echo '<option class="input-group-text" value="' . $row['id_dm'] . '">' . $row['ten_dm'] . '</option>';
                             }
+                        }
                         ?>
                     </select>
-                    <input required class="form-control" type="search" placeholder="Tìm sản phẩm" aria-label="Search" name="keyword">
+                    <input required class="form-control" type="search" placeholder="Tìm sản phẩm" aria-label="Search"
+                        name="keyword">
                     <input class="btn btn-success input-group-text" type="submit" value="Tìm">
                 </div>
             </form>
+            <?php
+                if(isset($_SESSION['adminname']) && ($_SESSION['adminname'] != '')){
+                    echo '
+                    <div class="col-6 dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-regular fa-user" style="font-size: 30px;"></i> 
+                            <p class="d-md-inline" hidden>'.$_SESSION['adminname'].'</p>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <!-- Đăng nhập -->
+                            <a class="dropdown-item" href="./admin.php?action=taikhoan">Tài khoản</a>
+                            <!-- Đăng ký -->
+                            <a class="dropdown-item" href="./admin.php?action=thoat">Đăng xuất</a>
+                        </div>
+                    </div>                                 
+                    ';
+                }
+            ?>
         </div>
     </div>
 </nav>

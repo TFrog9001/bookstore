@@ -1,0 +1,35 @@
+/* Color */
+.color-53a57f{
+    background-color: #53a57f;
+}
+.color-dbe3eb {
+    background-color: #dbe3eb;
+}
+/* search box */
+select#selector1 {
+    border: 1px solid #d9dde2;
+    background-color: white;
+}
+
+/* table-cart */
+.cart-thead{
+    border-bottom: 1px solid #ebebeb;
+    border-top: 1px solid #ebebeb;
+}
+
+.cart-thead > div{
+    font-weight: 550;
+    font-size: large;
+}
+
+.cart-tbody ,.cart-tfooter{
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: 10px;
+}
+
+.cart-tbody > div{
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
