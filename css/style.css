@@ -76,3 +76,8 @@ div#main{
 .modal-content {
     margin-top: 150px;
 }
+
+/*  */
+i.fa.fa-remove:hover {
+    cursor: pointer;
+}

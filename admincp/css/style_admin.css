@@ -50,3 +50,8 @@ li.nav-item :hover{
     padding: 15px;
     color: white;
 }
+
+/*  */
+i.fa.fa-remove:hover {
+    cursor: pointer;
+}
