@@ -64,7 +64,7 @@
                                     </div>
                                     ';
                                 echo '
-                                    <!-- Modal-xoa -->
+                                    <!-- Modal-xoa 2-->
                                     <div class="modal fade" id="exampleModal' . $row['id_dm'] . '" tabindex="-1" aria-labelledby="exampleModalLabel' . $row['id_dm'] . '"
                                         aria-hidden="true">
                                         <div class="modal-dialog">
@@ -142,9 +142,9 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                                                <a href="./modules/quanlydanhmuc/xuly.php?action=xoa_dm&id=' . $row['id_dm'] . '">
-                                                    <button type="button" class="btn btn-primary">Xóa</button>
-                                                </a>
+                                                <form action="./modules/quanlydanhmuc/xuly.php?id=' . $row['id_dm'] . '" method="post">
+                                                    <button type="submit" name="xoa_dm" class="btn btn-primary">Xóa</button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>

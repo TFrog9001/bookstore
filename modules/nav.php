@@ -10,7 +10,7 @@
                                     <a class="nav-link active" aria-current="page" href="./index.php#">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="./index.php?quanly=gioithieu">Giới thiệu</a>
+                                    <a class="nav-link" href="./index.php?quanly=gioithieu">Giới Thiệu</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="./index.php?quanly=lienhe">Liên Hệ</a>

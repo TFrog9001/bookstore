@@ -71,13 +71,14 @@ div#main{
     font-weight: 600;
 }
 
+/*  */
+i.fa.fa-remove:hover {
+    cursor: pointer;
+}
+
 /* Modal */
 
 .modal-content {
     margin-top: 150px;
 }
 
-/*  */
-i.fa.fa-remove:hover {
-    cursor: pointer;
-}

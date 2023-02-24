@@ -20,4 +20,10 @@
             include("./modules/quanlydanhmuc/them.php");
             break;
     }
+
+    switch($tmp){
+        case 'sanpham':
+            include("./modules/quanlysanpham/them.php");
+            break;
+    }
 ?>
