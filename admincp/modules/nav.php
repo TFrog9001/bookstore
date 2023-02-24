@@ -15,22 +15,24 @@
                     <a class="nav-link active" href="./admin.php?action=tintuc">Quản Lý Tin Tức</a>
                 </li>
             </ul>
-            <form class="d-flex flex-row" role="search">
+            <form class="d-flex flex-row" role="search" method="post" enctype="multipart/form-data">
                 <div class="input-group d-flex flex-row">
-                    <select class="btn dropdown-toggle" id="selector1" name="selector1">
+                    <select class="btn dropdown-toggle text-capitalize" id="selector1" name="selector1">
                         <option class="input-group-text" value="*">Tất cả</option>
                         <?php
                         $sql_dm = mysqli_query($conn, "select * from danhmucsach order by ten_dm");
                         if (mysqli_num_rows($sql_dm) > 0) {
                             while ($row = mysqli_fetch_assoc($sql_dm)) {
-                                echo '<option class="input-group-text" value="' . $row['id_dm'] . '">' . $row['ten_dm'] . '</option>';
+                                if($row['tinhtrang']==1){
+                                    echo '<option class="input-group-text text-capitalize" value="' . $row['id_dm'] . '">' . $row['ten_dm'] . '</option>';
+                                }
                             }
                         }
                         ?>
                     </select>
                     <input required class="form-control" type="search" placeholder="Tìm sản phẩm" aria-label="Search"
                         name="keyword">
-                    <input class="btn btn-success input-group-text" type="submit" value="Tìm">
+                    <input name="search_book" class="btn btn-success input-group-text" type="submit" value="Tìm">
                 </div>
             </form>
             <?php

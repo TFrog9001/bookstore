@@ -13,7 +13,10 @@
         case 'danhmuc':
             include("./modules/quanlydanhmuc/lietke.php");
             break;
-        case 'themdanhmuc':
+        case 'edit_dm':
+            include("./modules/quanlydanhmuc/sua.php");
+            break;
+        case 'them_dm':
             include("./modules/quanlydanhmuc/them.php");
             break;
     }

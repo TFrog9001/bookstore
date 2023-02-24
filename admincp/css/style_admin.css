@@ -11,6 +11,12 @@ select#selector1 {
     background-color: white;
 }
 
+/* nav-link */
+
+li.nav-item :hover{
+    background-color: rgb(233, 85, 115);
+}
+
 /* table-cart */
 .cart-thead{
     border-bottom: 1px solid #ebebeb;
@@ -32,4 +38,15 @@ select#selector1 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#edit_dm {
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+#edit_dm-header{
+    background-color: #198754;
+    padding: 15px;
+    color: white;
 }
