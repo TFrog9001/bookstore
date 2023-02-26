@@ -23,7 +23,13 @@
 
     switch($tmp){
         case 'sanpham':
+            include("./modules/quanlysanpham/lietke.php");
+            break;
+        case 'them_sp':
             include("./modules/quanlysanpham/them.php");
+            break;
+        case 'edit_sp':
+            include("./modules/quanlysanpham/sua.php");
             break;
     }
 ?>

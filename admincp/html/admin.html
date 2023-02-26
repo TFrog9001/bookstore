@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tiny.cloud/1/m6lvsjao8ve1aqa2vydo7qp6mq07skyhz6zugf3nu5ssnk6n/tinymce/6/tinymce.min.js"
-    referrerpolicy="origin"></script>
+  <!-- <script src="https://cdn.tiny.cloud/1/m6lvsjao8ve1aqa2vydo7qp6mq07skyhz6zugf3nu5ssnk6n/tinymce/6/tinymce.min.js"
+    referrerpolicy="origin"></script> -->
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
@@ -25,75 +25,89 @@
 </head>
 
 <body>
-  <div id="main">
+  <header class="container-fluid py-4 color-53a57f">
+    <h1 class="text-center text-white">Welcome to adminator control panel</h1>
+  </header>
+  <nav class="navbar navbar-expand-lg bg-light sticky-top">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="./admin.php?action=danhmuc">Quản Lý Danh Mục</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="./admin.php?action=sanpham">Quản Lý Sản Phẩm</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="./admin.php?action=khachhang">Quản Lý Khách Hàng</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="./admin.php?action=tintuc">Quản Lý Tin Tức</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div id="main-sp">
     <div class="container">
-      <div id="edit_dm" class="col-7 offset-3 mt-5">
-        <h2 id="edit_dm-header" class="h4 text-uppercase">thêm sản phẩm sách mới</h2>
-        <form class="col-12 rounded px-3 py-2" action="" method="post" enctype="multipart/form-data">
-          <div class="form-group row mb-2">
-            <label class="col-2 pt-3 col-form-label text-right font-weight-bold">Tên sách: </label>
-            <div class="col-10 my-2">
-              <input class="form-control text-capitalize" type="text" name="tensach" id="tensach"
-                placeholder="VD: SCHOLASTIC IN ACTION">
-            </div>
+      <div class="col-12">
+        <div class="row my-2">
+          <div class="col-10">
+            <h3 class="text-uppercase my-4">Danh sách sản phẩm</h3>
           </div>
-
-          <div class="form-group row mb-2">
-            <label class="col-2 col-form-label text-right font-weight-bold">Danh mục: </label>
-            <div class="col-4 my-2">
-              <select name="tinhtrang" id="tinhtrang">
-                <option value="1">Kích hoạt</option>
-                <option value="0">Vô hiệu hóa</option>
+        </div>
+        <div class="row mb-4">
+          <form class="col-5" role="search" method="post" enctype="multipart/form-data">
+            <div class="input-group d-flex flex-row">
+              <select class="btn dropdown-toggle text-capitalize" id="selector1" name="selector1">
+                <option class="input-group-text" value="*">Tất cả</option>
               </select>
+              <input required class="form-control" type="search" placeholder="Tìm sản phẩm" aria-label="Search"
+                name="keyword">
+              <input name="search_book" class="btn btn-success input-group-text" type="submit" value="Tìm">
             </div>
+          </form>
+          <div class="col d-flex justify-content-end">
+            <a href="./admin.php?action=them_sp">
+              <button class="btn btn-success text-truncate">
+                <i class="fas fa-solid fa-plus"></i>
+                Thêm sản phẩm
+              </button>
+            </a>
           </div>
-
-          <div class="form-group row mb-2">
-            <label class="col-2 pt-3 col-form-label text-right font-weight-bold">Giá sách: </label>
-            <div class="col-4 my-2">
-              <input class="form-control text-capitalize" type="text" name="gia" id="gia" placeholder="100.000">
-            </div>
-            <label class="col-2 pt-3 col-form-label text-right font-weight-bold">Giá giảm: </label>
-            <div class="col-4 my-2">
-              <input class="form-control text-capitalize" type="text" name="giagiam" id="giagiam" placeholder="100.000">
-            </div>
-          </div>
-
-          <div class="form-group row mb-2">
-            <label class="col-2 pt-3 col-form-label text-right font-weight-bold">Hình ảnh: </label>
-            <div class="col-10 my-2">
-              <input class="form-control text-capitalize" type="file" name="hinhanh" id="hinhanh">
-            </div>
-          </div>
-
-          <div class="form-group row mb-2">
-            <label class="col-2 pt-3 col-form-label text-right font-weight-bold">Số lượng: </label>
-            <div class="col-2 my-2">
-              <input class="form-control text-capitalize" type="number" value="1" name="soluong" id="soluong">
-            </div>
-            <label class="offset-2 col-2 pt-3 col-form-label text-right font-weight-bold">Tình trạng: </label>
-            <div class="col-2 my-3">
-              <select name="tinhtrang" id="tinhtrang">
-                <option value="1">Kích hoạt</option>
-                <option value="0">Vô hiệu hóa</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group row mb-2">
-            <label class="col-2 pt-3 col-form-label text-right font-weight-bold">Mô tả: </label>
-            <div class="col-10 my-2">
-              <textarea class="mytextarea" name="mota" id="mota" cols="60" rows="10"></textarea>
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <div class="justify-content-around">
-              <input name="them_dm" type="submit" class="btn btn-primary" value="Thêm danh mục">
-              <input type="reset" class="btn btn-danger" value="Huỷ">
-            </div>
-          </div>
-        </form>
+        </div>
+        <table id="tbl-sp" class="container">
+          <thead>
+            <th>ID</th>
+            <th width="200">Hình ảnh </th>
+            <th>Tên sách</th>
+            <th>Loại sách</th>
+            <th>Giá bán</th>
+            <th>Giá giảm</th>
+            <th>Số lượng</th>
+            <th>Tình trạng</th>
+            <th>Xóa</th>
+            <th>Chỉnh sửa</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>
+                <img class="img-fluid" src="../../images/book-img/book1.png" alt="">
+              </td>
+              <td>
+                I am a student
+              </td>
+              <td>sach tieng anh</td>
+              <td>100.000</td>
+              <td>100.000</td>
+              <td>20</td>
+              <td>Tinh trang</td>
+              <td>xoa</td>
+              <td>chinh sua</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -101,5 +115,4 @@
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="./js/scrip.js"></script>
-
 </html>

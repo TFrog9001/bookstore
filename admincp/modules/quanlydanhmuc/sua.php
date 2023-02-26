@@ -21,9 +21,9 @@
                 <div class="form-group row mb-2">
                     <label class="col-3 col-form-label text-right font-weight-bold">Tình trạng: </label>
                     <div class="col-4 my-2">
-                        <select name="tinhtrang" id="tinhtrang">
+                        <select name="tinhtrang_dm" id="tinhtrang_dm">
                             <?php 
-                            if($row_tmp['tinhtrang']==1){
+                            if($row_tmp['tinhtrang_dm']==1){
                                 echo '
                                 <option value="1" selected="selected">Kích hoạt</option>
                                 <option value="0">Vô hiệu hóa</option>
