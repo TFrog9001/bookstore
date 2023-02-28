@@ -19,7 +19,7 @@
                 </li>
             </ul>
             <?php
-                if(isset($_SESSION['adminname']) && ($_SESSION['adminname'] != '')){
+                if(isset($_SESSION['adminname']) && ($_SESSION['adminname'] != '')){   
                     echo '
                     <div id="useradmin" class="d-flex justify-content-end dropdown">
                         <a class="nav-link text-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
