@@ -52,7 +52,7 @@
                 </thead>
                 <tbody>
                     <?php 
-                        $sql_sp = mysqli_query($conn,"select * from sach s join danhmucsach dm on s.id_dm = dm.id_dm order by id_sach;");
+                        $sql_sp = mysqli_query($conn,"select * from sach s left join danhmucsach dm on s.id_dm = dm.id_dm order by id_sach;");
                         $i = 1;
                         $modal='';
                         if (mysqli_num_rows($sql_sp) > 0) {
@@ -71,7 +71,7 @@
                                 else {
                                     $sl = 'Vô hiệu hóa';
                                 }
-                                if($row['tinhtrang_dm'] == 1){
+                                if(($row['tinhtrang_dm'] == 1) || $row['tinhtrang_dm'] == null){
                                     echo '
                                     <tr class="'.$color.'">
                                         <td>'.$row['id_sach'].'</td>

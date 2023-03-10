@@ -21,24 +21,26 @@
                                     </a>
                                     <ul class="dropdown-menu list-menu" aria-labelledby="navbarDropdown">
                                     <?php
-                                        $sql_dm = mysqli_query($conn,"select * from danhmucsach order by ten_dm");
+                                        $sql_dm = mysqli_query($conn,"select * from danhmucsach order by id_dm");
                                         if (mysqli_num_rows($sql_dm) > 0) {
                                             while($row = mysqli_fetch_assoc($sql_dm)) {
                                                 if($row['tinhtrang_dm']==1){
-                                                    echo '<li><a class="dropdown-item text-capitalize" href="./index.php?quanly=danhmuc&id='.$row['id_dm'].'">'.$row['ten_dm'].'</a></li>';
+                                                    echo '<li><a class="dropdown-item text-capitalize" href="./index.php?quanly=danhmuc&id_dm='.$row['id_dm'].'">'.$row['ten_dm'].'</a></li>';
                                                 }
                                             }
-                                        } 
+                                        }
                                     ?>  
+                                        <!-- <li><a class="dropdown-item text-capitalize" href="./index.php?quanly=danhmuc&id_dm=null">Thể loại khác</a></li> -->
                                     </ul>
                                 </li>
                             </ul>
-                            <form class="d-md-none" show>
-                                <div id="header-searchbox1" class="input-group mt-3 mb-3 w-100 border border-info rounded-3" >
-                                    <input type="text" class="form-control border-0" placeholder="Tìm kiếm tựa sách, tác giả,..." aria-label="Input group example" aria-describedby="btnGroupAddon">
-                                    <div class="input-group-text border-0 bg-white" id="btnGroupAddon">
+                            
+                            <form action="./index.php" method="post" class="d-md-none" show>
+                                <div id="header-searchbox" class="input-group mt-3 w-100 border border-info rounded-3" >
+                                    <input required type="text" name="key" class="form-control border-0" placeholder="Tìm kiếm tựa sách, tác giả,..." aria-label="Input group example" aria-describedby="btnGroupAddon">
+                                    <button name="search" type="submit" class="input-group-text border-0 bg-white" id="btnGroupAddon">
                                         <i class="fas fa-solid fa-magnifying-glass"></i>
-                                    </div>
+                                    </button>
                                 </div>
                             </form>
                             <div id="phonenumber" class="d-md-flex" hidden>

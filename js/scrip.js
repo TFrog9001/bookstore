@@ -19,7 +19,5 @@ function quantitychange(){
     })
 }
 
-
-
-
 quantitychange();
+

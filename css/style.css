@@ -30,7 +30,7 @@ div#main{
 }
 
 /* soluong */
-.buy-amount button{
+.buy-amount>input{
     width: 35px;
     height: 35px;
     outline: none;
@@ -72,8 +72,10 @@ div#main{
 }
 
 /*  */
-i.fa.fa-remove:hover {
+i.fas.fa-remove:hover {
     cursor: pointer;
+    color: #f92b2b;
+    scale: 1.8;
 }
 
 /* Modal */

@@ -3,6 +3,7 @@
 
     if(isset($_POST['them_sp']) || isset($_POST['edit_sp'])){
         $ten_sp = $_POST['tensach'];
+        $tentg = $_POST['tentg'];
         $danhmuc = $_POST['danhmuc'];
         $gia = $_POST['gia'];
         $giagiam = $_POST['giagiam'];
@@ -17,8 +18,8 @@
     if(isset($_POST['them_sp'])){
         $hinhanh = rand(1,1000000).time().$hinhanh;
         move_uploaded_file($hinhanh_tmp,'./upload/'.$hinhanh);
-        $sql_them=("insert into sach (ten_sach, id_dm, gia, giagiam, soluong, hinhanh, tinhtrang, mota) 
-                                value('$ten_sp','$danhmuc','$gia','$giagiam','$soluong','$hinhanh','$tinhtrang','$mota')");
+        $sql_them=("insert into sach (ten_sach, ten_tg, id_dm, gia, giagiam, soluong, hinhanh, tinhtrang, mota) 
+                                value('$ten_sp', '$tentg','$danhmuc','$gia','$giagiam','$soluong','$hinhanh','$tinhtrang','$mota')");
 		mysqli_query($conn,$sql_them);
 		header('location:../../admin.php?action=sanpham');
         exit();
@@ -33,12 +34,12 @@
 
             $hinhanh = rand(1,1000000).time().$hinhanh;
             move_uploaded_file($hinhanh_tmp,'./upload/'.$hinhanh);
-            $sql_sua = "update sach set ten_sach='$ten_sp', id_dm = '$danhmuc', gia = '$gia', giagiam = '$giagiam',
+            $sql_sua = "update sach set ten_sach = '$ten_sp', ten_tg = '$tentg', id_dm = '$danhmuc', gia = '$gia', giagiam = '$giagiam',
                                     soluong = '$soluong', hinhanh = '$hinhanh',tinhtrang='$tinhtrang', mota = '$mota'
                                     where id_sach = $id_sach";
         }
         else {
-            $sql_sua = "update sach set ten_sach='$ten_sp', id_dm = '$danhmuc', gia = '$gia', giagiam = '$giagiam',
+            $sql_sua = "update sach set ten_sach = '$ten_sp', ten_tg = '$tentg', id_dm = '$danhmuc', gia = '$gia', giagiam = '$giagiam',
                                     soluong = '$soluong', tinhtrang='$tinhtrang', mota = '$mota'
                                     where id_sach = $id_sach";
         }

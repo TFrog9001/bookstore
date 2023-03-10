@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="form-group row mb-2">
-                    <label class="col-2 col-form-label text-right font-weight-bold">Danh mục :</label>
+                    <label class="col-2 col-form-label text-right font-weight-bold mt-2">Danh mục :</label>
                     <div class="col-4 my-2">
                         <select class="form-control text-capitalize" id="danhmuc" name="danhmuc">
                             <?php
@@ -26,6 +26,11 @@
                             }
                             ?>
                         </select>
+                    </div>
+                    <label class="col-2 col-form-label text-right font-weight-bold mt-2">Tác giả :</label>
+                    <div class="col-4 my-2 ms-0">
+                        <input class="form-control text-capitalize" type="text" name="tentg" id="tentg"
+                            placeholder="VD: Nam Cao">
                     </div>
                 </div>
 

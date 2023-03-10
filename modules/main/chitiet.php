@@ -7,6 +7,13 @@
         // echo mysqli_num_rows($sql_ct);
         
         $gia = number_format ( $row['gia'] , $decimals = 0 , $dec_point = "." , $thousands_sep = "," ).' VND'; 
+        if($row['giagiam'] != 0){
+            $giagiam = number_format ( $row['giagiam'] , $decimals = 0 , $dec_point = "." , $thousands_sep = "," ).' VND'; 
+        }
+        else{
+            $giagiam = $gia;
+            $gia='';
+        }
     }
 
 ?>
@@ -14,8 +21,8 @@
     <div class="container">
         <div id="main-breadcrumb" class="border border-light-subtle px-4 my-3 pt-2" aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item text-capitalize"><a href="#">Home</a></li>
-                <li class="breadcrumb-item text-capitalize"><a href="#"><?php echo $row['ten_dm']?></a></li>
+                <li class="breadcrumb-item text-capitalize"><a href="./index.php">Home</a></li>
+                <li class="breadcrumb-item text-capitalize"><a href="./index.php?quanly=danhmuc&id_dm=<?php echo $row['id_dm']?>"><?php echo $row['ten_dm']?></a></li>
                 <li class="breadcrumb-item text-capitalize active" aria-current="page"><?php echo $row['ten_sach']?></li>
             </ol>
         </div>
@@ -24,12 +31,12 @@
             <div class="col-md-5 col-12">
                 <div class="card text-center">
                     <div class="m-2">
-                        <img class="img" src="./admincp/modules/quanlysanpham/upload/<?php echo $row['hinhanh']?>" alt="<?php echo $row['hinhanh']?>">
+                        <img class="img-fluid w-75" src="./admincp/modules/quanlysanpham/upload/<?php echo $row['hinhanh']?>" alt="<?php echo $row['hinhanh']?>">
                     </div>
                     <div class="card-body">
                         <nav class="hinhanhthunho">
                             <div class="d-inline">
-                                <img class="img-fluid w-25 " src="./admincp/modules/quanlysanpham/upload/<?php echo $row['hinhanh']?>" alt="<?php echo $row['hinhanh']?>">
+                                <img class="img-fluid w-25" src="./admincp/modules/quanlysanpham/upload/<?php echo $row['hinhanh']?>" alt="<?php echo $row['hinhanh']?>">
                             </div>
                             
                         </nav>
@@ -41,23 +48,29 @@
                     <h2 class="text-uppercase"><?php echo $row['ten_sach']?></h2>
                 </div>
                 <div class="giasp row">
-                    <h2 class="text-danger text-uppercase"><?php echo $gia?></h2>
+                    <h2 class="text-danger text-uppercase"><?php echo $giagiam?></h2>
+                </div>
+                <div class="giagiamsp text-decoration-line-through ms-1" style="font-size: 16px!important;">
+                    <?php echo $gia?>
                 </div>
                 <div class="mt-4 row">
                     <div>
-                        <div class="d-flex">
-                            <label class="text-uppercase d-inline mt-2" for="">Số lượng:</label>
-                            <div class="buy-amount d-flex ms-2">
-                                <button class="btn-minus">-</button>
-                                <input class="text-center border border-light-subtle" type="text" name="amount"
-                                    id="amount" size="2" value="1">
-                                <button class="btn-plus">+</button>
+                        <form action="./index.php" method="post">
+                            <div class="d-flex">
+                                <label class="text-uppercase d-inline mt-2" for="">Số lượng:</label>
+                                <div class="buy-amount d-flex ms-2">
+                                    <input type="button" class="btn btn-light btn-minus" value="-">
+                                    <input class="text-center border border-light-subtle" type="text" name="soluong"
+                                        id="amount" size="2" value="1" min="1" maxlength="<?php echo $row['id_sach']?>">
+                                    <input type="button" class="btn btn-light btn-plus" value="+"> 
+                                </div>
                             </div>
-                        </div>
-                        <div class="d-flex mt-5">
-                            <button class="btn btn-lg btn-danger">Mua hàng</button>
-                            <button class="btn btn-lg btn-primary text-white ms-2">Thêm vào giỏ</button>
-                        </div>
+                            <div class="d-flex mt-5">
+                                <input type="hidden" name="id_sach" value="<?php echo $row['id_sach']?>">               
+                                <button type="submit" name="muangay" class="btn btn-lg btn-danger">Mua hàng</button>
+                                <button class="btn btn-lg btn-primary text-white ms-2">Thêm vào giỏ</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

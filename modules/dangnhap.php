@@ -7,17 +7,30 @@
 		$count=mysqli_num_rows($sql);
         $row = mysqli_fetch_assoc($sql);
 		if($count>0){
-            $_SESSION['id_user'] = $row['id'];
+            $_SESSION['id_user'] = $row['id_user'];
 			$_SESSION['username'] = $username;  
            
             header('location: index.php');          
 
 		}else{
-			echo '<p style="text-align:center;width:auto;padding:30px;background:red;color:#fff;font-size:20px;">Email và Tài khoản bị sai</p>';
+            include('./modules/nav.php');
+            include('./modules/main/index.php');
+			$error = '
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                Tài khoản hoặc mật khẩu không đúng!
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            ';
+            
+            $showdn = ' <script>
+                            $(document).ready(function(){    
+                                $("#exampleModal1").modal("show");
+                            })    
+                        </script>';
+            
 		}
 	}
 ?>
-
 <!-- Modal-đăng nhập -->
 <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -29,6 +42,7 @@
                 </h3>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <?php if(isset($error)) echo $error; ?>
             <!-- Form đăng nhập -->
             <form id="signupForm" action="" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
