@@ -23,13 +23,45 @@
 
     switch($tmp){
         case 'sanpham':
-            include("./modules/quanlysanpham/lietke.php");
+            include("./modules/quanlysanpham/search.php");
             break;
         case 'them_sp':
             include("./modules/quanlysanpham/them.php");
             break;
         case 'edit_sp':
             include("./modules/quanlysanpham/sua.php");
+            break;
+    }
+
+    switch($tmp){
+        case 'khachhang':
+            include("./modules/quanlyuser/lietke.php");
+            break;
+        case 'edit_user':
+            include("./modules/quanlyuser/sua.php");
+            break;
+    }
+
+    switch($tmp){
+        case 'donhang':
+            include("./modules/quanlydonhang/lietke.php");
+            break;
+        case 'list-dh':
+            include("./modules/quanlydonhang/lietke.php");
+            break;
+        case 'chitiet':
+            include("./modules/quanlydonhang/chitiet.php");
+            break;
+    }
+
+    switch($tmp){
+        case 'thoat':
+            unset($_SESSION['adminname']);
+            echo '
+                <script>
+                    window.location.href="./admin.php"
+                </script>
+                ';
             break;
     }
 ?>

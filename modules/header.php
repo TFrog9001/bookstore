@@ -38,6 +38,7 @@
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                         <!-- Đăng nhập -->
                                         <a class="dropdown-item" href="./index.php?quanly=taikhoan">Tài khoản</a>
+                                        <a class="dropdown-item" href="./index.php?quanly=list_dh">Đơn hàng của tôi</a>
                                         <!-- Đăng ký -->
                                         <a class="dropdown-item" href="./index.php?quanly=thoat">Đăng xuất</a>
                                     </div>
@@ -69,4 +70,5 @@
 <?php
     include("./modules/dangnhap.php");
     include("./modules/dangky.php");
+    include("./modules/repasswd.php")
 ?>

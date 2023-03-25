@@ -1,11 +1,6 @@
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-    Đặt hàng thành công!
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
 <?php 
-	if(isset($_SESSION['id_cart'])){
-        $id_cart = $_SESSION['id_cart'];
-		unset($_SESSION['id_cart']);
+	if(isset($_GET['id_cart'])){
+		$id_cart = $_GET['id_cart'];
 		$sql_cart = mysqli_query($conn,"select * from cart c join user u on c.id_user=u.id_user where c.id_cart='$id_cart' limit 1");
 		$row_cart = mysqli_fetch_assoc($sql_cart);
 	}
@@ -83,7 +78,7 @@
 								<tr class="'.$color.'">
 									<td>'.$row['id_sach'].'</td>
 									<td>
-										<img class="img-fluid" src="./admincp/modules/quanlysanpham/upload/'.$row['hinhanh'].'" alt="'.$row['hinhanh'].'">
+										<img class="img-fluid" src="./modules/quanlysanpham/upload/'.$row['hinhanh'].'" alt="'.$row['hinhanh'].'">
 									</td>
 									<td class="text-capitalize">
 										'.$row['ten_sach'].'
@@ -129,6 +124,10 @@
 					<div class="d-flex mb-4">
 					<form action="./modules/quanlydonhang/xuly.php" method="post">
 						<input type="hidden" name="id_cart" value="'.$id_cart.'">
+						<button type="submit" name="xacnhan_dh" class="btn btn-primary me-3">
+							<i class="fas fa-solid fa-check"></i> 
+							Xác nhận đơn hàng
+						</button>
 						<button type="submit" name="huy_dh" class="btn btn-danger">
 							<i class="fas fa-sharp fa-solid fa-xmark"></i>
 							Hủy

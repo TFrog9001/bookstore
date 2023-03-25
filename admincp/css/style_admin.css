@@ -65,6 +65,10 @@ i.fas.fa-regular.fa-pen-to-square:hover {
     color: #112ecf;
     scale: 1.8;
 }
+i.fas.fa-solid.fa-clipboard-list:hover{
+    color: #112ecf;
+    scale: 1.8;
+}
 
 /* tble-sp */
 table#tbl-sp {
@@ -94,9 +98,33 @@ table#tbl-sp > tbody > tr > td > img {
     width: 135px;
 }
 
+/* table user */
+table#tbl-user {
+    border-bottom: 1px solid #8b8b8b;
+}
+
+table#tbl-user > thead > tr{
+    background-color: #198754;
+    text-align: center;
+}
+
+table#tbl-user > thead > tr > th {
+    color: white; 
+    padding: 10px;   
+    text-transform: capitalize;
+}
+
+table#tbl-user > tbody > tr{
+    text-align: center;
+}
+
+table#tbl-user > tbody > tr > td {
+    padding: 10px;     
+}
 /* useradmin */
 div#useradmin {
     position: absolute;
     top: 5px;
     right: 50px;
 }
+

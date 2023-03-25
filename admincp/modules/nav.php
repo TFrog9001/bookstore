@@ -15,6 +15,9 @@
                     <a class="nav-link active" href="./admin.php?action=khachhang">Quản Lý Khách Hàng</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link active" href="./admin.php?action=donhang">Quản Lý Đơn Hàng</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link active" href="./admin.php?action=tintuc">Quản Lý Tin Tức</a>
                 </li>
             </ul>
@@ -29,7 +32,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <!-- Đăng nhập -->
                             <a class="dropdown-item" href="./admin.php?action=taikhoan">Tài khoản</a>
-                            <!-- Đăng ký -->
+                            <!-- Đăng xuất -->
                             <a class="dropdown-item" href="./admin.php?action=thoat">Đăng xuất</a>
                         </div>
                     </div>                                 

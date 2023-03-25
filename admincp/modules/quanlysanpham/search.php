@@ -16,7 +16,7 @@
                             if (mysqli_num_rows($sql_dm) > 0) {
                                 while ($row = mysqli_fetch_assoc($sql_dm)) {
                                     if ($row['tinhtrang_dm'] == 1) {
-                                        echo '<option class="input-group-text text-capitalize" name="danhmuc" value="' . $row['id_dm'] . '">' . $row['ten_dm'] . '</option>';
+                                        echo '<option class="input-group-text text-capitalize" value="' . $row['id_dm'] . '">' . $row['ten_dm'] . '</option>';
                                     }
                                 }
                             }
@@ -52,7 +52,26 @@
                 </thead>
                 <tbody>
                     <?php 
-                        $sql_sp = mysqli_query($conn,"select * from sach s left join danhmucsach dm on s.id_dm = dm.id_dm order by id_sach;");
+                        // echo $_POST['selector1'];
+                        // echo $_POST['keyword'];
+                        
+                        if(isset($_POST['search_book'])){
+                            $id_dm = $_POST['selector1'];
+                            $key = $_POST['keyword'];
+                            if($_POST['selector1'] !== '*'){
+                                $sql_sp = mysqli_query($conn,"select * from sach s left join danhmucsach dm on s.id_dm = dm.id_dm 
+                                                        where dm.id_dm = $id_dm and s.ten_sach like '%$key%'
+                                                        order by s.id_sach;");
+                            }
+                            else{
+                                $sql_sp = mysqli_query($conn,"select * from sach s left join danhmucsach dm on s.id_dm = dm.id_dm
+                                                        where s.ten_sach like '%$key%'
+                                                        order by s.id_sach;");
+                            }
+                        }
+                        else{
+                            $sql_sp = mysqli_query($conn,"select * from sach s left join danhmucsach dm on s.id_dm = dm.id_dm order by id_sach;");
+                        }
                         $i = 1;
                         $modal='';
                         if (mysqli_num_rows($sql_sp) > 0) {

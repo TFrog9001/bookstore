@@ -77,56 +77,66 @@
                         $id_user = $_SESSION['id_user'];
                         $sql_user = mysqli_query($conn,"select * from user where id_user = $id_user");
                         $row = mysqli_fetch_assoc($sql_user);
-                        
-                        echo '
-                        <div class="col-md-8 order-md-1">
-                            <h4 class="mb-3">Thông tin khách hàng</h4>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <label for="name">Họ tên</label>
-                                    <input type="text" class="form-control" name="name" id="name"
-                                        value="'.$row['name'].'" disabled>
-                                </div>
-                                <div class="col-md-12">
-                                    <label for="email">Email</label>
-                                    <input type="text" class="form-control" name="email" id="email"
-                                        value="'.$row['email'].'" disabled>
-                                </div>
-                                <div class="col-md-12">
-                                    <label for="diachi">Địa chỉ</label>
-                                    <input required type="text" class="form-control" name="diachi" id="diachi"
-                                        placeholder="VD: 130 Xô Viết Nghệ Tỉnh">
-                                </div>
-                                <div class="col-md-12">
-                                    <label for="sdt">Điện thoại</label>
-                                    <input required type="text" class="form-control" name="sdt" id="sdt"
-                                        placeholder="VD: 0948330411">
+                        if($row['tinhtrang'] == 0){
+                            echo '
+                            <div class="col-md-8 order-md-1">
+                                <div class="alert alert-danger" role="alert">
+                                    Bạn phải thanh toán các đơn hàng chưa thanh toán trước đó!
                                 </div>
                             </div>
-        
-                            <h4 class="my-3">Hình thức thanh toán</h4>
-        
-                            <div class="d-block my-3">
-                                <div class="custom-control custom-radio">
-                                    <input checked id="httt-1" name="httt_ma" type="radio" class="custom-control-input" required=""
-                                        value="E-Banking">
-                                    <label class="custom-control-label" for="httt-1">E-Banking</label>
+                            ';
+                        }
+                        else{
+                            echo '
+                            <div class="col-md-8 order-md-1">
+                                <h4 class="mb-3">Thông tin khách hàng</h4>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label for="name">Họ tên</label>
+                                        <input type="text" class="form-control" name="name" id="name"
+                                            value="'.$row['name'].'" disabled>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="email">Email</label>
+                                        <input type="text" class="form-control" name="email" id="email"
+                                            value="'.$row['email'].'" disabled>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="diachi">Địa chỉ</label>
+                                        <input required type="text" class="form-control" name="diachi" id="diachi"
+                                            placeholder="VD: 130 Xô Viết Nghệ Tỉnh">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="sdt">Điện thoại</label>
+                                        <input required type="text" class="form-control" name="sdt" id="sdt"
+                                            placeholder="VD: 0948330411">
+                                    </div>
                                 </div>
-                                <div class="custom-control custom-radio">
-                                    <input id="httt-2" name="httt_ma" type="radio" class="custom-control-input" required=""
-                                        value="CHuyển khoản">
-                                    <label class="custom-control-label" for="httt-2">Chuyển khoản</label>
+            
+                                <h4 class="my-3">Hình thức thanh toán</h4>
+            
+                                <div class="d-block my-3">
+                                    <div class="custom-control custom-radio">
+                                        <input checked id="httt-1" name="httt_ma" type="radio" class="custom-control-input" required=""
+                                            value="E-Banking">
+                                        <label class="custom-control-label" for="httt-1">E-Banking</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input id="httt-2" name="httt_ma" type="radio" class="custom-control-input" required=""
+                                            value="Chuyển khoản">
+                                        <label class="custom-control-label" for="httt-2">Chuyển khoản</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input id="httt-3" name="httt_ma" type="radio" class="custom-control-input" required=""
+                                            value="Ship COD">
+                                        <label class="custom-control-label" for="httt-3">Ship COD</label>
+                                    </div>
                                 </div>
-                                <div class="custom-control custom-radio">
-                                    <input id="httt-3" name="httt_ma" type="radio" class="custom-control-input" required=""
-                                        value="Ship COD">
-                                    <label class="custom-control-label" for="httt-3">Ship COD</label>
-                                </div>
+                                <hr class="mb-4">
+                                <input class="btn btn-danger btn-lg btn-block mb-3" type="submit" name="dathang" value="Đặt hàng">
                             </div>
-                            <hr class="mb-4">
-                            <input class="btn btn-danger btn-lg btn-block mb-3" type="submit" name="dathang" value="Đặt hàng">
-                        </div>
-                        ';
+                            ';
+                        }
                     }
                
                ?>
