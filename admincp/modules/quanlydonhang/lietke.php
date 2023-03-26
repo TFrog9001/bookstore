@@ -30,8 +30,8 @@
                 </thead>
                 <tbody>
                     <?php 
-                        if(isset($_GET['id_user']) && $_GET['id_user'] > 0){
-                            $sql_cart = mysqli_query($conn,"select * from cart c join user u on c.id_user=u.id_user where u.id_user = $_GET[id_user]");
+                        if(isset($_POST['search']) && $_POST['id_user'] > 0){
+                            $sql_cart = mysqli_query($conn,"select * from cart c join user u on c.id_user=u.id_user where u.id_user = '$_POST[id_user]'");
                         }
                         else{
                             $sql_cart = mysqli_query($conn,"select * from cart c join user u on c.id_user=u.id_user");
@@ -54,8 +54,11 @@
                                 elseif($row['tinhtrang_cart'] == 1){
                                     $tinhtrang = '<p class="pt-3 text-primary">Đã xác nhận</p>';
                                 }
-                                elseif($row['tinhtrang_cart'] == 3){
-                                    $tinhtrang = '<p class="pt-3 text-success">Đã giao hàng</p>';
+                                elseif($row['tinhtrang_cart'] == 2){
+                                    $tinhtrang = '<p class="pt-3 text-info">Đang giao hàng...</p>';
+                                }
+                                else{
+                                    $tinhtrang = '<p class="pt-3 text-success">Hoàn thành!</p>';
                                 }
                                 echo '
                                 <tr class="'.$color.'">
@@ -72,7 +75,7 @@
                                         '.$row['sdt'].'
                                     </td>
                                     <td>
-                                        <p class="text-truncate" style="width: 140px">'.$row['diachi'].'</>
+                                        <p class="text-truncate mt-3" style="width: 140px">'.$row['diachi'].'</>
                                     </td>
                                     <td>
                                         '.number_format( $row['tongtien'], $decimals = 0 , $dec_point = "." , $thousands_sep = "," ).' VND

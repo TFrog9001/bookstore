@@ -30,8 +30,12 @@
             case 'taikhoan':
                 include('modules/main/taikhoan.php');
                 break;
+            // donhang
             case 'list_dh':
                 include('modules/main/list_dh.php');
+                break;
+            case 'chitiet_dh':
+                include('modules/main/chitietdonhang.php');
                 break;
             case 'thoat':
                 unset($_SESSION['id_user']);

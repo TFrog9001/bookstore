@@ -119,31 +119,46 @@
                 </tbody>
             </table>
 			<?php 
-				if($row_cart['tinhtrang_cart'] == 0){
-					echo '
-					<div class="d-flex mb-4">
-					<form action="./modules/quanlydonhang/xuly.php" method="post">
-						<input type="hidden" name="id_cart" value="'.$id_cart.'">
-						<button type="submit" name="xacnhan_dh" class="btn btn-primary me-3">
-							<i class="fas fa-solid fa-check"></i> 
-							Xác nhận đơn hàng
-						</button>
-						<button type="submit" name="huy_dh" class="btn btn-danger">
-							<i class="fas fa-sharp fa-solid fa-xmark"></i>
-							Hủy
-						</button>
-					</form>
-				</div>
-					';
+				switch($row_cart['tinhtrang_cart']){
+					case 0:
+						echo '
+						<div class="d-flex mb-4">
+							<form action="./modules/quanlydonhang/xuly.php" method="post">
+								<input type="hidden" name="id_cart" value="'.$id_cart.'">
+								<button type="submit" name="xacnhan_dh" class="btn btn-primary me-3">
+									<i class="fas fa-solid fa-check"></i> 
+									Xác nhận đơn hàng
+								</button>
+								<button type="submit" name="huy_dh" class="btn btn-danger">
+									<i class="fas fa-sharp fa-solid fa-xmark"></i>
+									Hủy
+								</button>
+							</form>
+						</div>
+						';
+						break;
+					case 1 :
+						echo '
+						<div class="btn btn-lg btn-primary ">
+							Đã xác nhận
+						</div>
+						';
+						break;
+					case 2 :
+						echo '
+						<div class="btn btn-lg btn-info ">
+							Đang giao hàng...
+						</div>
+						';
+						break;
+					case 3 :
+						echo '
+						<div class="btn btn-lg btn-success ">
+							Giao hàng thành công!
+						</div>
+						';
+						break;
 				}
-				else {
-					echo '
-					<div class="btn btn-info ">
-						Đang giao hàng...
-					</div>
-					';
-				}
-
 			?>
 			
 		</div>

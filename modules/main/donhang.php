@@ -1,4 +1,4 @@
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
+<div class="alert alert-success alert-dismissible fade show m-3" role="alert">
     Đặt hàng thành công!
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
@@ -116,7 +116,7 @@
 						</td>
 						<td class="text-center h4 text-danger">
 							<?php 
-								echo number_format ($tongtien, $decimals = 0 , $dec_point = "." , $thousands_sep = "," )
+								echo number_format ($tongtien + 30000, $decimals = 0 , $dec_point = "." , $thousands_sep = "," )
 							?>
 							VND
 						</td>
@@ -126,15 +126,15 @@
 			<?php 
 				if($row_cart['tinhtrang_cart'] == 0){
 					echo '
-					<div class="d-flex mb-4">
-					<form action="./modules/quanlydonhang/xuly.php" method="post">
-						<input type="hidden" name="id_cart" value="'.$id_cart.'">
-						<button type="submit" name="huy_dh" class="btn btn-danger">
-							<i class="fas fa-sharp fa-solid fa-xmark"></i>
-							Hủy
-						</button>
-					</form>
-				</div>
+					<div class="d-flex mb-4 justify-content-end">
+						<form action="./admincp/modules/quanlydonhang/xuly.php" method="post">
+							<input type="hidden" name="id_cart" value="'.$id_cart.'">
+							<button type="submit" name="huy_don" class="btn btn-danger">
+								Hủy đơn hàng
+								<i class="fas fa-sharp fa-solid fa-xmark"></i>
+							</button>
+						</form>
+					</div>
 					';
 				}
 				else {
