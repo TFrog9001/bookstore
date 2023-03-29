@@ -1,7 +1,7 @@
 <?php 
 	if(isset($_GET['id_cart'])){
 		$id_cart = $_GET['id_cart'];
-		$sql_cart = mysqli_query($conn,"select * from cart c join user u on c.id_user=u.id_user where c.id_cart='$id_cart' limit 1");
+		$sql_cart = mysqli_query($conn,"select * from cart c join user u on c.id_user=u.id_user where c.id_cart='$id_cart' and (tinhtrang_cart ='1' or tinhtrang_cart = '2') limit 1");
 		$row_cart = mysqli_fetch_assoc($sql_cart);
 	}
 ?>
@@ -37,7 +37,12 @@
 					</tr>
 					<tr>
 						<td>Ngày đặt</td>
-						<td><?=date('G:i:s - d/m/Y',strtotime($row_cart['date']));?></td>
+						<td>
+							<?php
+								$timestamp=date('G:i:s - d/m/Y',strtotime($row_cart['date']));
+								echo $timestamp;
+							?>
+						</td>
 					</tr>
 				</tbody>
 			</table>
@@ -92,7 +97,6 @@
 								$tongtien+=$row['giaban']*$row['soluong_dh'];
                                 $i++;    
                             }
-							
                         }
                     ?>  
 					
@@ -115,42 +119,24 @@
             </table>
 			<?php 
 				switch($row_cart['tinhtrang_cart']){
-					case 0:
-						echo '
-						<div class="d-flex mb-4">
-							<form action="./modules/quanlydonhang/xuly.php" method="post">
-								<input type="hidden" name="id_cart" value="'.$id_cart.'">
-								<button type="submit" name="xacnhan_dh" class="btn btn-primary me-3">
-									<i class="fas fa-solid fa-check"></i> 
-									Xác nhận đơn hàng
-								</button>
-								<button type="submit" name="huy_dh" class="btn btn-danger">
-									<i class="fas fa-sharp fa-solid fa-xmark"></i>
-									Hủy
-								</button>
-							</form>
-						</div>
-						';
-						break;
 					case 1 :
 						echo '
-						<div class="btn btn-lg btn-primary ">
-							Đã xác nhận
-						</div>
+						<form action="./modules/shipping/xuly.php" method="post">
+							<input name="id_cart" type="hidden" value="'.$row_cart['id_cart'].'">
+							<input name="ship_dh" type="submit" class="btn btn-lg btn-primary" value="Bắt đầu giao hàng!">
+						<form>
 						';
 						break;
 					case 2 :
 						echo '
-						<div class="btn btn-lg btn-info ">
+						<div class="">
 							Đang giao hàng...
+							<form class="mt-3" action="./modules/shipping/xuly.php" method="post">
+								<input name="id_cart" type="hidden" value="'.$row_cart['id_cart'].'">
+								<input name="hoanthanh_dh" type="submit" class="btn btn-lg btn-success" value="Hoàn thành giao hàng!">
+							<form>
 						</div>
-						';
-						break;
-					case 3 :
-						echo '
-						<div class="btn btn-lg btn-success ">
-							Giao hàng thành công!
-						</div>
+						
 						';
 						break;
 				}

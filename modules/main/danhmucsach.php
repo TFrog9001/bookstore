@@ -2,8 +2,15 @@
 
 if (isset($_GET['id_dm']) && $_GET['id_dm'] != '') {
     $id_dm = $_GET['id_dm'];
-    $sql_sp = mysqli_query($conn, "select * from sach s join danhmucsach dm on s.id_dm = dm.id_dm where s.id_dm = $id_dm");
-    $sql_dm = mysqli_query($conn, "select * from danhmucsach where id_dm = $id_dm");
+    if($id_dm =="other"){
+        $sql_sp = mysqli_query($conn, "select * from sach  where id_dm is null");
+        $fl = 0;
+    }
+    else {
+        $sql_sp = mysqli_query($conn, "select * from sach s left join danhmucsach dm on s.id_dm = dm.id_dm where s.id_dm = $id_dm");
+        $sql_dm = mysqli_query($conn, "select * from danhmucsach where id_dm = $id_dm");
+        $fl = 1;
+    }
     $row_dm = mysqli_fetch_array($sql_dm);
 }
 
@@ -14,7 +21,14 @@ if (isset($_GET['id_dm']) && $_GET['id_dm'] != '') {
             <ol class="breadcrumb">
                 <li class="breadcrumb-item text-capitalize"><a href="./index.php">Home</a></li>
                 <li class="breadcrumb-item text-capitalize active" aria-current="page">
-                    <?php echo $row_dm['ten_dm'] ?>
+                    <?php 
+                        if($fl){
+                            echo $row_dm['ten_dm'] ;
+                        }
+                        else {
+                            echo "Thể loại khác";
+                        }
+                    ?>
                 </li>
             </ol>
         </div>

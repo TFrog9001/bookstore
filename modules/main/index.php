@@ -71,7 +71,9 @@
                 echo '
                     <div class="sanpham" class="row border border-dark-subtle">
                         <div class="color-53a57f text-white py-2">
-                            <h2 class="text-uppercase ms-3 mb-0">Thể loại khác</h2>
+                            <a class="nav-link" href="./index.php?quanly=danhmuc&id_dm=other">  
+                                <h2 class="text-uppercase ms-3 mb-0">Thể loại khác</h2>
+                            </a>
                         </div>
                         <div class="product-list row pb-4">
                 ';

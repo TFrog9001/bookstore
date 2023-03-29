@@ -97,6 +97,14 @@
                             </tr>
                             <tr>
                                 <td>
+                                    <span class="me-3">Ngày đặt :</span>
+                                </td>
+                                <td>
+                                    <?=date('G:i:s - d/m/Y',strtotime($row['date']));?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
                                     <span class="me-3">Hình thức thanh toán :</span>
                                 </td>
                                 <td>

@@ -2,7 +2,7 @@
     
     if(isset($_GET['id_sach']) && $_GET['id_sach'] != ''){
         $id_sach = $_GET['id_sach'];
-        $sql_ct = mysqli_query($conn,"select * from sach s join danhmucsach dm on s.id_dm = dm.id_dm having s.id_sach = $id_sach");
+        $sql_ct = mysqli_query($conn,"select * from sach s left join danhmucsach dm on s.id_dm = dm.id_dm where s.id_sach = $id_sach");
         $row = mysqli_fetch_array($sql_ct);  
         // echo mysqli_num_rows($sql_ct);
         

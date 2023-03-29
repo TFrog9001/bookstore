@@ -3,7 +3,7 @@
         <div class="col-12">
             <div class="row my-2">
                 <div class="col-10">
-                    <h3 class="text-uppercase my-3">Danh sách đơn hàng</h3>
+                    <h3 class="text-uppercase my-3">Danh sách đơn hàng ship</h3>
                 </div>
             </div>
             <div class="row mb-4">
@@ -26,19 +26,10 @@
                     <th>Tổng đơn</th>
                     <th>Trạng thái</th>
                     <th>Chi tiết</th>
-                    <th>Xóa</th>
                 </thead>
                 <tbody>
                     <?php 
-                        if(isset($_POST['search']) && $_POST['id_user'] > 0){
-                            $sql_cart = mysqli_query($conn,"select * from cart c join user u on c.id_user=u.id_user where u.id_user = '$_POST[id_user]'");
-                        }
-                        elseif(isset($_GET['id_user'])){
-                            $sql_cart = mysqli_query($conn,"select * from cart c join user u on c.id_user=u.id_user where u.id_user = '$_GET[id_user]'");
-                        }
-                        else{
-                            $sql_cart = mysqli_query($conn,"select * from cart c join user u on c.id_user=u.id_user");
-                        }
+                        $sql_cart = mysqli_query($conn,"select * from cart c join user u on c.id_user=u.id_user where tinhtrang_cart = '1' or tinhtrang_cart = '2'");
                         $i = 1;
                         $modal='';
                         if (mysqli_num_rows($sql_cart) > 0) {
@@ -87,58 +78,18 @@
                                         '.$tinhtrang.'
                                     </td>
                                     <td>
-                                        <a href="./admin.php?action=chitiet_dh&id_cart=' . $row['id_cart'] . '" class="text-dark">     
+                                        <a href="./admin.php?action=chitiet_ship&id_cart=' . $row['id_cart'] . '" class="text-dark">     
                                             <i class="fas fa-solid fa-clipboard-list"></i>
                                         </a>
                                     </td>
-                                    <td>
-                                        <i class="fas fa-remove" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal' . $row['id_cart'] . '"></i>
-                                    </td>
                                 </tr>
-                                ';
-                                $modal = $modal . '
-                                <!-- Modal-xoa '.$i.'-->
-                                <div class="modal fade" id="exampleModal' . $row['id_cart'] . '" tabindex="-1"
-                                    aria-labelledby="exampleModalLabel' . $row['id_cart'] . '" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel' . $row['id_cart'] . '">
-                                                    <i class="fas fa-light fa-circle-exclamation"></i>
-                                                    Thông báo
-                                                </h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p class="h3">
-                                                    Đơn hàng này của
-                                                    <strong class="text-capitalize text-decoration-underline"> ' . $row['name'] . '
-                                                    </strong>
-                                                    sẽ bị xóa khỏi dữ liệu
-                                                </p>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
-                                                <form action="./modules/quanlydonhang/xuly.php" method="post">
-                                                    <input value="' . $row['id_cart'] . '" name="id_cart" hidden>
-                                                    <button type="submit" name="xoa_dh" class="btn btn-primary">Xóa</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                ';  
+                                '; 
                                 $i++;    
                             }
                         }
                     ?>  
                 </tbody>
             </table>
-            <?php 
-                echo $modal;
-            ?>
         </div>
     </div>
 </div>

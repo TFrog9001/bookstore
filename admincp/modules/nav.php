@@ -17,8 +17,16 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="./admin.php?action=donhang">Quản Lý Đơn Hàng</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="./admin.php?action=tintuc">Quản Lý Tin Tức</a>
+                <li class="">
+                    <div class="dropdown">
+                        <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Khác
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./admin.php?action=ship">Shipping</a></li>
+                        </ul>
+                    </div>
                 </li>
             </ul>
             <?php

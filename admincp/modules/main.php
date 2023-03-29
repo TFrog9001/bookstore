@@ -49,7 +49,7 @@
         case 'list-dh':
             include("./modules/quanlydonhang/lietke.php");
             break;
-        case 'chitiet':
+        case 'chitiet_dh':
             include("./modules/quanlydonhang/chitiet.php");
             break;
     }
@@ -62,6 +62,15 @@
                     window.location.href="./admin.php"
                 </script>
                 ';
+            break;
+    }
+
+    switch ($tmp){
+        case 'ship':
+            include("./modules/shipping/lietke.php");
+            break;
+        case 'chitiet_ship':
+            include("./modules/shipping/chitiet.php");
             break;
     }
 ?>
