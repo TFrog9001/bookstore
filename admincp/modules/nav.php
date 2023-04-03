@@ -6,6 +6,9 @@
         <div class="collapse navbar-collapse" id="navbarContent1">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
+                    <a class="nav-link active" href="./admin.php?action=trangchu&year=<?=date('Y')?>">Trang chủ</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link active" href="./admin.php?action=danhmuc">Quản Lý Danh Mục</a>
                 </li>
                 <li class="nav-item">

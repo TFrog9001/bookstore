@@ -7,6 +7,12 @@
     }
 
     switch($tmp){
+        case 'trangchu':
+            include("./modules/Trangchu/trangchu.php");
+            break;
+    }
+
+    switch($tmp){
         case '':
             include("./modules/quanlydanhmuc/lietke.php");
             break;
