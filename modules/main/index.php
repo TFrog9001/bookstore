@@ -13,7 +13,7 @@
                         echo '
                         <div class="sanpham" class="row border border-dark-subtle">
                             <div class="color-53a57f text-white py-2">
-                                <a class="nav-link" href="./index.php?quanly=danhmuc&id_dm='.$row_dm['id_dm'].'">
+                                <a class="nav-link" href="./index.php?quanly=danhmuc&id_dm='.$row_dm['id_dm'].'&page=1">
                                     <h2 class="text-uppercase ms-3 mb-0">'.$row_dm['ten_dm'].'</h2>
                                 </a>
                             </div>
@@ -71,7 +71,7 @@
                 echo '
                     <div class="sanpham" class="row border border-dark-subtle">
                         <div class="color-53a57f text-white py-2">
-                            <a class="nav-link" href="./index.php?quanly=danhmuc&id_dm=other">  
+                            <a class="nav-link" href="./index.php?quanly=danhmuc&id_dm=other&page=1">  
                                 <h2 class="text-uppercase ms-3 mb-0">Thể loại khác</h2>
                             </a>
                         </div>

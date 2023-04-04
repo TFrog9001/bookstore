@@ -20,17 +20,18 @@
                                         Danh Mục Sách
                                     </a>
                                     <ul class="dropdown-menu list-menu" aria-labelledby="navbarDropdown">
-                                    <?php
-                                        $sql_dm = mysqli_query($conn,"select * from danhmucsach order by id_dm");
-                                        if (mysqli_num_rows($sql_dm) > 0) {
-                                            while($row = mysqli_fetch_assoc($sql_dm)) {
-                                                if($row['tinhtrang_dm']==1){
-                                                    echo '<li><a class="dropdown-item text-capitalize" href="./index.php?quanly=danhmuc&id_dm='.$row['id_dm'].'">'.$row['ten_dm'].'</a></li>';
+                                        <li><a class="dropdown-item text-capitalize" href="./index.php?quanly=danhmuc&id_dm=all&page=1">Tất cả</a></li>
+                                        <?php
+                                            $sql_dm = mysqli_query($conn,"select * from danhmucsach order by id_dm");
+                                            if (mysqli_num_rows($sql_dm) > 0) {
+                                                while($row = mysqli_fetch_assoc($sql_dm)) {
+                                                    if($row['tinhtrang_dm']==1){
+                                                        echo '<li><a class="dropdown-item text-capitalize" href="./index.php?quanly=danhmuc&id_dm='.$row['id_dm'].'&page=1">'.$row['ten_dm'].'</a></li>';
+                                                    }
                                                 }
                                             }
-                                        }
-                                    ?>  
-                                        <!-- <li><a class="dropdown-item text-capitalize" href="./index.php?quanly=danhmuc&id_dm=null">Thể loại khác</a></li> -->
+                                        ?>
+                                        <li><a class="dropdown-item text-capitalize" href="./index.php?quanly=danhmuc&id_dm=other&page=1">Thể loại khác</a></li>
                                     </ul>
                                 </li>
                             </ul>
