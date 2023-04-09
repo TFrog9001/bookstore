@@ -9,7 +9,7 @@
 <div id="main">
     <div class="container">
         <div id="edit_dm" class="col-8 offset-2 mt-5 mb-5">
-            <h2 id="edit_dm-header" class="h4 text-uppercase">thêm sản phẩm sách mới</h2>
+            <h2 id="edit_dm-header" class="h4 text-uppercase">chỉnh sửa thông tin sách</h2>
             <form class="col-12 rounded px-3 py-2" action="./modules/quanlysanpham/xuly.php?id_sach=<?php echo $row_tmp['id_sach'];?>" method="post" enctype="multipart/form-data">
                 <div class="form-group row mb-2">
                     <label class="col-2 pt-3 col-form-label text-right font-weight-bold">Tên sách :</label>

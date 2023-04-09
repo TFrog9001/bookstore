@@ -134,7 +134,6 @@
             </div>
             <div class="tab-pane fade border border-light-subtle" id="nav-contact" role="tabpanel"
                 aria-labelledby="nav-contact-tab">
-
             </div>
         </div>
     </div>

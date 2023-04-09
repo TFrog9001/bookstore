@@ -26,11 +26,16 @@
 
 <body>
   <?php
-  session_start();
-  include("./config/config.php");
-  include("./modules/header.php");
-  include("./modules/nav.php");
-  include("./modules/main.php");
+    session_start();
+    include("./config/config.php");
+    if(!isset($_SESSION['adminname'])){
+      header('location:login.php');
+    }
+    if(isset($_SESSION['adminname'])){
+      include("./modules/header.php");
+      include("./modules/nav.php");
+      include("./modules/main.php");
+    }
   ?>
 </body>
   <script src="https://code.jquery.com/jquery-3.6.3.js"></script>

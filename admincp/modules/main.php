@@ -10,11 +10,8 @@
         case 'trangchu':
             include("./modules/Trangchu/trangchu.php");
             break;
-    }
-
-    switch($tmp){
         case '':
-            include("./modules/quanlydanhmuc/lietke.php");
+            header('location: ./admin.php?action=trangchu&year='.date('Y').'');
             break;
         case 'danhmuc':
             include("./modules/quanlydanhmuc/lietke.php");
@@ -63,9 +60,10 @@
     switch($tmp){
         case 'thoat':
             unset($_SESSION['adminname']);
+            unset($_SESSION['id_admin']);
             echo '
                 <script>
-                    window.location.href="./admin.php"
+                    window.location.href="./login.php"
                 </script>
                 ';
             break;

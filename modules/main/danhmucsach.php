@@ -109,8 +109,18 @@ else {
         <div class="row">
             <nav aria-label="Page navigation example" class="d-flex justify-content-end">
                 <ul class="pagination">
+                    <?php 
+                        if(isset($_GET['page'])){
+                            if($_GET['page'] ==  1){
+                                $previ_page = "disabled";
+                            }
+                            else{
+                                $previ_page = '';
+                            }
+                        }
+                    ?>
                     <li class="page-item">
-                        <a href="" class="page-link">Previous</a>
+                        <a class="page-link <?php echo $previ_page;?>" href="./index.php?quanly=danhmuc&id_dm=<?=$danhmuc?>&page=<?=($_GET['page']-1)?>">Previous</a>
                     </li>
                     <?php 
                         for($i=1; $i<=$num_page; $i++){
@@ -130,8 +140,18 @@ else {
                             }
                         }
                     ?>
+                    <?php 
+                        if(isset($_GET['page'])){
+                            if($_GET['page'] >= $num_page){
+                                $next_page = "disabled";
+                            }
+                            else{
+                                $next_page = '';
+                            }
+                        }
+                    ?>
                     <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
+                        <a class="page-link <?php echo $next_page;?>" href="./index.php?quanly=danhmuc&id_dm=<?=$danhmuc?>&page=<?=($_GET['page']+1)?>">Next</a>
                     </li>
                 </ul>
             </nav>
