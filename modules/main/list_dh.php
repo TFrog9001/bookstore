@@ -1,9 +1,9 @@
 <div class="container">
     <h2 class="text-uppercase col my-4">Đơn hàng của tôi</h2>
     <?php
-        $sql_dh = mysqli_query($conn,"select * from cart where id_user = '$_SESSION[id_user]'");
+        $sql_dh = mysqli_query($conn,"select * from cart where id_user = '$_GET[id_order]'");
         if(mysqli_num_rows($sql_dh)>0){
-            while($row = mysqli_fetch_assoc($sql_dh)){
+            while($row = $sql_dh->fetch_all(PDO::FETCH_ASSOC)){
                     if($row['tinhtrang_cart'] == 0){
                         $tinhtrang = '<p class="pt-3 text-danger">Đang chờ...</p>';
                     }
@@ -19,7 +19,7 @@
                     $item_dh = '';
                     $sql_cd = mysqli_query($conn,"select * from cart_detail cd join sach s on cd.id_sach = s.id_sach where id_cart = '$row[id_cart]'");
                     $tongtien = 0;
-                    while($row_cd = mysqli_fetch_assoc($sql_cd)) {
+                    while($row_cd = $sql_cd->fetch_all(PDO::FETCH_ASSOC)) {
                         $item_dh = $item_dh.'
                         <li class="list-group-item d-flex justify-content-between">
                             <img width="100" height="auto" src="./admincp/modules/quanlysanpham/upload/'.$row_cd['hinhanh'].'" alt="'.$row_cd['hinhanh'].'">
